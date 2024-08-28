@@ -7,7 +7,9 @@ use Filament\Panel;
 use Filament\Widgets;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
+use Hasnayeen\Themes\ThemesPlugin;
 use Filament\Http\Middleware\Authenticate;
+use Hasnayeen\Themes\Http\Middleware\SetTheme;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
@@ -55,12 +57,14 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
+                SetTheme::class,
             ])
             ->authMiddleware([
                 Authenticate::class,
             ])
             ->plugins([
                 FilamentShieldPlugin::make(),
+                ThemesPlugin::make(),
             ])
             ->maxContentWidth('full')
             ->sidebarCollapsibleOnDesktop()
