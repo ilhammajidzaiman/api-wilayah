@@ -19,6 +19,6 @@ class WilayahProvinsi extends Model
 
     public function kabupatens(): HasMany
     {
-        return $this->hasMany(MWilayahKabupaten::class, 'kode_provinsi');
+        return $this->hasMany(WilayahKabupaten::class, 'kode_provinsi');
     }
 }

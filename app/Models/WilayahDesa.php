@@ -20,6 +20,6 @@ class WilayahDesa extends Model
 
     public function kecamatan(): BelongsTo
     {
-        return $this->belongsTo(MWilayahKecamatan::class, 'kode_kecamatan', 'kode');
+        return $this->belongsTo(WilayahKecamatan::class, 'kode_kecamatan', 'kode');
     }
 }

@@ -21,11 +21,11 @@ class WilayahKabupaten extends Model
 
     public function provinsi(): BelongsTo
     {
-        return $this->belongsTo(MWilayahProvinsi::class, 'kode_provinsi', 'kode');
+        return $this->belongsTo(WilayahProvinsi::class, 'kode_provinsi', 'kode');
     }
 
     public function kecamatans(): HasMany
     {
-        return $this->hasMany(MWilayahKecamatan::class, 'kode_kabupaten');
+        return $this->hasMany(WilayahKecamatan::class, 'kode_kabupaten');
     }
 }

@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class WilayahKecamatan extends Model
 {
-       use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $fillable =
     [
@@ -21,11 +21,11 @@ class WilayahKecamatan extends Model
 
     public function kabupaten(): BelongsTo
     {
-        return $this->belongsTo(MWilayahKabupaten::class, 'kode_kabupaten', 'kode');
+        return $this->belongsTo(WilayahKabupaten::class, 'kode_kabupaten', 'kode');
     }
 
     public function desas(): HasMany
     {
-        return $this->hasMany(MWilayahDesa::class, 'kode_kecamatan');
+        return $this->hasMany(WilayahDesa::class, 'kode_kecamatan');
     }
 }
